@@ -1,12 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Maler Project</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maler - Webseite</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Hello from /Maler</h1>
-  <script type="module" src="/src/main.js"></script>
+
+    <header>
+        <a href="#hero" class="logo-link">
+            <img src="http://googleusercontent.com/image_collection/image_retrieval/13432130771643078482_0" alt="Malerrollen-Logo">
+        </a>
+        <nav>
+            <a href="#leistungen">Leistungen</a>
+            <a href="#projekte">Projekte</a>
+            <a href="#kontakt">Kontakt</a>
+            <a href="#ueber-uns">Über uns</a>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <h1>Maler Mustermann</h1>
+        <p>Ihr Spezialist für professionelle Malerarbeiten</p>
+    </section>
+
+    <section id="leistungen">
+        <h2>Unsere Leistungen</h2>
+        <div class="painter-roller"></div>
+        <div class="content-panel">
+            <div class="leistungen-container">
+                <div class="leistungs-item">
+                    <h3>Innenraumgestaltung</h3>
+                    <p>Farbkonzepte, Tapezierarbeiten, Spachteltechniken und mehr...</p>
+                </div>
+                <div class="leistungs-item">
+                    <h3>Fassadengestaltung</h3>
+                    <p>Fassadenanstriche, Putzsanierung und professioneller Wetterschutz...</p>
+                </div>
+                <div class="leistungs-item">
+                    <h3>Lackierarbeiten</h3>
+                    <p>Fenster, Türen, Zargen und Holzbauteile neu lackieren...</p>
+                </div>
+                <div class="leistungs-item">
+                    <h3>Bodenbeläge</h3>
+                    <p>Verlegen von Parkett, Laminat, Vinyl und Teppichböden...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projekte">
+        <h2>Unsere Projekte</h2>
+        <div class="painter-roller" id="projects-roller"></div>
+        <div class="content-panel">
+            <div class="projekte-container">
+                <div class="projekt-item">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/13432130771643078482_1" alt="Projektbild 1">
+                    <h3>Wohnzimmerrenovierung</h3>
+                    <p>Modernes Farbkonzept mit edlen Akzenten.</p>
+                </div>
+                <div class="projekt-item">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/13432130771643078482_2" alt="Projektbild 2">
+                    <h3>Fassadenanstrich</h3>
+                    <p>Strahlend weiße Fassade mit neuem Putz.</p>
+                </div>
+                <div class="projekt-item">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/13432130771643078482_3" alt="Projektbild 3">
+                    <h3>Bürogestaltung</h3>
+                    <p>Helle und freundliche Büroräume mit neuen Böden.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontakt">
+        <h2>Kontakt</h2>
+        <div class="painter-roller"></div>
+        <div class="content-panel">
+            <p>Nehmen Sie Kontakt mit uns auf...</p>
+        </div>
+    </section>
+
+    <section id="terminbuchung">
+        <h2>Termin buchen</h2>
+        <div class="content-panel termin-form">
+            <p>Jetzt Termin mit KI buchen</p>
+            <input type="email" placeholder="Ihre E-Mail-Adresse" class="termin-input">
+            <textarea class="termin-input" rows="5" placeholder="Geben Sie hier Ihre freien Termintage oder Notizen ein..."></textarea>
+            <button class="termin-button">Termin jetzt buchen</button>
+        </div>
+    </section>
+
+    <section id="ueber-uns">
+        <h2>Über uns</h2>
+        <div class="painter-roller"></div>
+        <div class="content-panel">
+            <p>Wir sind ein erfahrener Malerbetrieb mit Leidenschaft für unser Handwerk...</p>
+            <p>Seit vielen Jahren bieten wir unseren Kunden erstklassige Qualität und Zuverlässigkeit...</p>
+        </div>
+    </section>
+
+    <script src="main.js"></script>
 </body>
 </html>
