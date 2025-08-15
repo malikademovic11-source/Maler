@@ -8,18 +8,22 @@
 </head>
 <body>
 
-    <header>
-        <a href="#hero" class="logo-link">
-            <img src="http://googleusercontent.com/image_collection/image_retrieval/13432130771643078482_0" alt="Malerrollen-Logo">
-        </a>
-        <nav>
-            <a href="#leistungen">Leistungen</a>
-            <a href="#projekte">Projekte</a>
-            <a href="#kontakt">Kontakt</a>
-            <a href="#ueber-uns">Über uns</a>
-        </nav>
-    </header>
-
+<header>
+    <a href="#hero" class="logo-link">
+        <img src="..." alt="Malerrollen-Logo">
+    </a>
+    <nav id="haupt-navigation">
+        <a href="#leistungen">Leistungen</a>
+        <a href="#projekte">Projekte</a>
+        <a href="#kontakt">Kontakt</a>
+        <a href="#ueber-uns">Über uns</a>
+    </nav>
+    <button class="hamburger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+</header>
     <section id="hero">
         <h1>Maler Mustermann</h1>
         <p>Ihr Spezialist für professionelle Malerarbeiten</p>
@@ -83,14 +87,21 @@
     </section>
 
     <section id="terminbuchung">
-        <h2>Termin buchen</h2>
-        <div class="content-panel termin-form">
-            <p>Jetzt Termin mit KI buchen</p>
-            <input type="email" placeholder="Ihre E-Mail-Adresse" class="termin-input">
-            <textarea class="termin-input" rows="5" placeholder="Geben Sie hier Ihre freien Termintage oder Notizen ein..."></textarea>
-            <button class="termin-button">Termin jetzt buchen</button>
+    <h2>Termine sofort mit KI buchen</h2>
+    <div class="content-panel termin-form">
+        <div class="ki-box revealed">
+            <h3>1. Mit KI-Assistent nach freien Terminen suchen</h3>
         </div>
-    </section>
+        <div class="ki-box revealed" style="transition-delay: 0.3s;">
+            <h3>2. Termin Buchen</h3>
+        </div>
+        <div class="ki-box revealed" style="transition-delay: 0.6s;">
+            <h3>3. Alles innerhalb Minuten fertig haben</h3>
+        </div>
+
+        <button class="termin-button ki-button">Jetzt buchen</button>
+    </div>
+</section>
 
     <section id="ueber-uns">
         <h2>Über uns</h2>
