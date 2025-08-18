@@ -1,33 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Dieser Teil beobachtet die Hauptsektionen und ist bereits in deinem Code
-    const sections = document.querySelectorAll('section');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('revealed');
-            }
-        });
-    }, {
-        threshold: 0.5
+    // Hamburger-Menü Funktionalität
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const navMenu = document.getElementById('haupt-navigation');
+
+    hamburgerMenu.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
     });
 
-    sections.forEach(section => {
-        observer.observe(section);
-    });
-
-    // NEUER CODE: Dieser Teil beobachtet die ki-boxen
-    const kiBoxes = document.querySelectorAll('.ki-box');
-    const kiBoxObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('revealed');
-            }
-        });
-    }, {
-        threshold: 0.5
-    });
-
-    kiBoxes.forEach(box => {
-        kiBoxObserver.observe(box);
-    });
+    // Keine Animationen in dieser Version, daher ist der Observer-Code nicht mehr nötig.
 });

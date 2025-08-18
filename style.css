@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
+/* ==========================================================
+   Basis-Stile & Typografie
+   ========================================================== */
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
-    padding-top: 80px;
+    padding-top: 0;
     background-color: #F9F9F9;
     color: #444444;
     overflow-x: hidden;
@@ -16,10 +19,21 @@ h1, h2, h3 {
     font-weight: 700;
 }
 
+/* Anpassung der Überschriften */
+h2 {
+    font-size: 2.5rem;
+    color: #2C3E50;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 50px;
+}
+
 p {
     line-height: 1.6;
 }
 
+/* ==========================================================
+   Header & Navigation
+   ========================================================== */
 header {
     position: sticky;
     top: 0;
@@ -42,19 +56,41 @@ header {
     width: auto;
 }
 
-header nav a {
+#haupt-navigation {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+}
+
+#haupt-navigation a {
     color: #34495E;
     text-decoration: none;
-    margin: 0 15px;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
-header nav a:hover {
+#haupt-navigation a:hover {
     color: #FF7F50;
 }
 
-/* Anpassung der Hero-Sektion für Titel und Untertitel */
+.hamburger-menu {
+    display: none;
+}
+
+/* ==========================================================
+   Sektionen
+   ========================================================== */
+section {
+    position: relative;
+    padding: 100px 50px;
+    overflow: hidden;
+    min-height: 80vh;
+    display: flex; /* Erforderlich für die vertikale Zentrierung des Inhalts */
+    flex-direction: column; /* Stapelt die Elemente untereinander */
+}
+
+/* Hintergrundfarben für die Sektionen mit Farbverlauf */
 #hero {
     height: 80vh;
     display: flex;
@@ -65,123 +101,77 @@ header nav a:hover {
     background-color: #F0F0F0;
     margin-bottom: 20px;
 }
-
 #hero h1 {
     font-size: 6rem;
     margin-bottom: 0.5rem;
     text-align: center;
     line-height: 1.2;
 }
-
 #hero p {
     font-size: 1.5rem;
     margin-top: 0;
     text-align: center;
 }
 
-/* Anpassung der Sektionen, um mehr Platz zu schaffen */
-section {
-    position: relative;
-    padding: 100px 50px;
-    overflow: hidden;
-    min-height: 100vh;
+#leistungen { 
+    background: linear-gradient(to bottom, rgba(44, 62, 80, 0.1), rgba(44, 62, 80, 0.5));
+}
+#projekte { 
+    background: linear-gradient(to bottom, rgba(44, 62, 80, 0.1), rgba(44, 62, 80, 0.5));
+}
+#terminbuchung { 
+    background: linear-gradient(to bottom, rgba(44, 62, 80, 0.1), rgba(44, 62, 80, 0.5));
+}
+#ueber-uns { 
+    background: linear-gradient(to bottom, rgba(44, 62, 80, 0.1), rgba(44, 62, 80, 0.5));
 }
 
-/* Hintergrundfarben für die einzelnen Sektionen */
-#leistungen {
-    background-color: #F9F9F9;
-}
-#projekte {
-    background-color: #F0F0F0;
-}
-#kontakt {
-    background-color: #FFFFFF;
-}
-#ueber-uns {
-    background-color: #F0F0F0;
-}
-#terminbuchung {
-    background-color: #F9F9F9;
-}
-
-.content-panel {
-    position: relative;
-    z-index: 100;
-    opacity: 0;
-    transition: opacity 1s ease-in 0.8s;
-}
-
-section.revealed .content-panel {
-    opacity: 1;
-}
-
-/* Stile für das neue responsive Grid-Layout */
-.leistungen-container {
+/* ==========================================================
+   Inhalts-Container & Boxen
+   ========================================================== */
+.leistungen-container,
+.projekte-container,
+.termin-form {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     margin-top: 50px;
+    place-items: center;
 }
 
-.leistungs-item {
-    background-color: #FFFFFF;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    text-align: center;
-}
-.leistungs-item h3 {
-    color: #FF7F50;
-}
-.projekte-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
-}
+.leistungs-item,
 .projekt-item {
     background-color: #FFFFFF;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    overflow: hidden;
+    padding: 30px;
     text-align: center;
+}
+.leistungs-item h3 { color: #FF7F50; }
+
+.projekt-item {
+    padding: 0;
+    overflow: hidden;
 }
 .projekt-item img {
     width: 100%;
     height: 200px;
     object-fit: cover;
 }
-.projekt-item h3 {
-    margin: 20px 0 10px;
-    color: #2C3E50;
-}
-.projekt-item p {
-    padding: 0 20px 20px;
-    font-size: 0.9rem;
-}
+.projekt-item h3 { margin: 20px 0 10px; }
+.projekt-item p { padding: 0 20px 20px; font-size: 0.9rem; }
 
-
-/* Stil für den Buchungsbereich */
+/* ==========================================================
+   Formulare & Buttons
+   ========================================================== */
 .termin-form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 500px;
-    margin: 0 auto;
+    max-width: 700px;
+    margin: auto; /* Vertikale und horizontale Zentrierung */
     text-align: center;
     gap: 15px;
-}
-.termin-input {
-    width: 100%;
-    padding: 15px;
-    border: 2px solid #000000; /* Schwarze Umrandung */
-    border-radius: 8px;
-    font-size: 1rem;
-    box-sizing: border-box;
-}
-.termin-input:focus {
-    outline: none;
-    border-color: #FF7F50;
 }
 .termin-button {
     width: 100%;
@@ -195,67 +185,91 @@ section.revealed .content-panel {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-.termin-button:hover {
-    background-color: #34495E;
-}
+.termin-button:hover { background-color: #34495E; }
 
-
-/* Standard Painter-Roller Effekt (für 'Leistungen', 'Über uns' und 'Kontakt') */
-.painter-roller {
-    position: absolute;
-    top: 0;
-    left: 0;
+/* ==========================================================
+   Spezielle Stile
+   ========================================================== */
+.ki-box {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 30px;
     width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, #2C3E50, rgba(44, 62, 80, 0.2));
-    transform: translateY(-100%);
-    transition: transform 0.8s ease-out;
-    z-index: 999;
+    max-width: 600px;
+    text-align: center;
+    border-left: 5px solid #FF7F50;
+    margin-bottom: 20px;
 }
 
-section.revealed .painter-roller {
-    transform: translateY(0);
+/* Über uns: Zweispaltiges Layout für Bild und Text */
+.ueber-uns-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 50px;
+}
+.ueber-uns-bild {
+    flex: 1;
+    min-width: 350px;
+    height: 450px;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+.ueber-uns-text {
+    flex: 2;
+    text-align: left;
+}
+.ueber-uns-text p {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: justify;
 }
 
-/* Spezifische Animation für den Malerrolle-Übergang im Projekte-Bereich */
-#projekte.revealed #projects-roller {
-    animation: projectsRollerWipe 2.5s forwards;
+/* ==========================================================
+   Responsives Design
+   ========================================================== */
+@media (max-width: 1024px) {
+    header { padding: 1rem 3%; }
+    #hero h1 { font-size: 4rem; }
+    #hero p { font-size: 1.2rem; }
+    section { padding: 80px 20px; }
 }
 
-@keyframes projectsRollerWipe {
-    0% {
-        transform: translateX(-100%);
-        background: linear-gradient(to right, #2C3E50, #34495E);
+@media (max-width: 768px) {
+    /* Hamburger-Menü und Navigation */
+    .hamburger-menu { display: block; }
+    #haupt-navigation {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        background-color: #FFFFFF;
+        width: 100%;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        padding: 20px;
     }
-    15% {
-        transform: translateX(0%);
+    #haupt-navigation.active { display: flex; }
+    #haupt-navigation a {
+        text-align: center;
+        margin: 10px 0;
+        padding: 10px;
+        border-bottom: 1px solid #f0f0f0;
     }
-    33% {
-        transform: translateX(0%);
+    #haupt-navigation a:last-child { border-bottom: none; }
+    .leistungen-container,
+    .projekte-container { gap: 20px; }
+    .termin-form { max-width: 100%; }
+    
+    /* Über uns: Spalten auf kleineren Bildschirmen untereinander stapeln */
+    .ueber-uns-container {
+        flex-direction: column;
+        align-items: center;
     }
-    50% {
-        transform: translateX(-100%);
+    .ueber-uns-text {
+        text-align: center;
     }
-    66% {
-        transform: translateX(0%);
-    }
-    85% {
-        transform: translateX(0%);
-    }
-    100% {
-        transform: translateX(100%);
-        background: #2C3E50;
-    }
-}
-
-#projekte #projects-roller {
-    transition: none !important;
-}
-
-#projekte.revealed #projects-roller {
-    transform: none !important;
-}
-#projekte.revealed .content-panel {
-    opacity: 1;
-    transition: opacity 1s ease-in 2.5s;
 }
